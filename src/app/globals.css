@@ -1,0 +1,165 @@
+@import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+:root {
+  /* ---- Colors ---- */
+  --bg-top: #2F0D0B;
+  --bg-mid: #4A1411;
+  --bg-bottom: #000000;
+  --maroon-600: #660903;
+  --maroon-700: #50100B;
+  --maroon-nav-a: #640A04;
+  --maroon-nav-b: #510F0B;
+  --footer-end: #580A0A;
+  --cream: #E7DFCC;
+  --cream-2: #E9E2D1;
+  --cream-button-text-light: #F3EDC8;
+  --footer-text: #F7E2B5;
+  --gold: #FDB03F;
+  --gold-footer: #F9BB41;
+  --gold-quote: #F5AB3D;
+  --gold-dark: #976926;
+  --ink: #130304;
+  --wa-button-bg: #E8E0CE;
+  --wa-button-text: #410704;
+
+  /* ---- Fluid type: 375px → 1920px ---- */
+  --text-hero: clamp(2.75rem, 1.476rem + 5.437vw, 8rem);      /* 44 → 128px Vollkorn Italic */
+  --text-title: clamp(1.875rem, 1.359rem + 2.201vw, 4rem);    /* 30 → 64px  Vollkorn Italic */
+  --text-eyebrow: clamp(1.125rem, 0.913rem + 0.906vw, 2rem);  /* 18 → 32px  Vollkorn Italic */
+  --text-body: clamp(1rem, 0.879rem + 0.518vw, 1.5rem);       /* 16 → 24px  Montserrat */
+  --text-small: clamp(0.875rem, 0.845rem + 0.129vw, 1rem);    /* 14 → 16px  nav links, captions */
+
+  /* ---- Fluid space: 375px → 1920px ---- */
+  --space-xs: clamp(0.5rem, 0.379rem + 0.518vw, 1rem);        /* 8 → 16px */
+  --space-s: clamp(0.75rem, 0.568rem + 0.777vw, 1.5rem);      /* 12 → 24px */
+  --space-m: clamp(1rem, 0.636rem + 1.553vw, 2.5rem);         /* 16 → 40px */
+  --space-l: clamp(1.5rem, 0.893rem + 2.589vw, 4rem);         /* 24 → 64px */
+  --space-xl: clamp(2.5rem, 1.651rem + 3.625vw, 6rem);        /* 40 → 96px */
+  --space-2xl: clamp(4rem, 2.544rem + 6.214vw, 10rem);        /* 64 → 160px */
+
+  /* ---- Fluid layout ---- */
+  --gutter: clamp(1.25rem, -1.314rem + 10.939vw, 11.8125rem); /* 20 → 189px page side padding */
+  --section-y: clamp(4.5rem, 2.558rem + 8.285vw, 12.5rem);    /* 72 → 200px section vertical padding */
+  --nav-h: clamp(4rem, 3.515rem + 2.071vw, 6rem);             /* 64 → 96px navbar height */
+  --btn-h: clamp(3rem, 2.757rem + 1.036vw, 4rem);             /* 48 → 64px button height */
+  --radius-btn: clamp(1rem, 0.833rem + 0.712vw, 1.6875rem);   /* 16 → 27px button radius */
+
+  /* ---- Container: matches Figma content width (1542px at 1920) ---- */
+  --container-max: 96.375rem;                                 /* 1542px */
+}
+
+@theme {
+  --color-bg-top: var(--bg-top);
+  --color-bg-mid: var(--bg-mid);
+  --color-bg-bottom: var(--bg-bottom);
+  --color-maroon-600: var(--maroon-600);
+  --color-maroon-700: var(--maroon-700);
+  --color-maroon-nav-a: var(--maroon-nav-a);
+  --color-maroon-nav-b: var(--maroon-nav-b);
+  --color-footer-end: var(--footer-end);
+  --color-cream: var(--cream);
+  --color-cream-2: var(--cream-2);
+  --color-cream-light: var(--cream-button-text-light);
+  --color-footer-text: var(--footer-text);
+  --color-gold: var(--gold);
+  --color-gold-footer: var(--gold-footer);
+  --color-gold-quote: var(--gold-quote);
+  --color-gold-dark: var(--gold-dark);
+  --color-ink: var(--ink);
+  --color-wa-bg: var(--wa-button-bg);
+  --color-wa-text: var(--wa-button-text);
+
+  --font-serif: var(--font-vollkorn), serif;
+  --font-sans: var(--font-montserrat), sans-serif;
+
+  --text-hero: var(--text-hero);
+  --text-title: var(--text-title);
+  --text-eyebrow: var(--text-eyebrow);
+  --text-body: var(--text-body);
+  --text-small: var(--text-small);
+
+  --spacing-xs: var(--space-xs);
+  --spacing-s: var(--space-s);
+  --spacing-m: var(--space-m);
+  --spacing-l: var(--space-l);
+  --spacing-xl: var(--space-xl);
+  --spacing-2xl: var(--space-2xl);
+  --spacing-gutter: var(--gutter);
+  --spacing-section: var(--section-y);
+  --spacing-nav: var(--nav-h);
+  --spacing-btn: var(--btn-h);
+  --radius-btn: var(--radius-btn);
+}
+
+html {
+  scroll-behavior: auto; /* Handled by Lenis; do not use smooth here to prevent conflict */
+  background-color: var(--bg-bottom);
+  color: var(--cream);
+}
+
+body {
+  font-family: var(--font-montserrat), sans-serif;
+  background: linear-gradient(to bottom, var(--bg-top), var(--bg-mid) 27%, var(--bg-bottom));
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Base Container */
+.container-fluid {
+  width: min(100% - 2 * var(--gutter), var(--container-max));
+  margin-inline: auto;
+}
+
+/* Gradient typography helpers */
+.text-gradient-cream {
+  background: linear-gradient(90deg, #E7DFCC 0%, #E9E2D1 53%, #FFFFFF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(180deg, #FDB03F 51%, #976926 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold-cta {
+  background: linear-gradient(90deg, #FDB03F 0%, #E49F39 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold-footer {
+  background: linear-gradient(90deg, #F9BB41 0%, #FDB03F 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button & Card Shadows */
+.shadow-btn {
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.27);
+}
+
+.shadow-title {
+  text-shadow: 0 20px 40px rgba(0, 0, 0, 0.27);
+}
+
+/* Anchor links padding to account for fixed navbar */
+section[id] {
+  scroll-margin-top: var(--nav-h);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

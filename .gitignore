@@ -1,0 +1,48 @@
+# Agent instructions - NEVER commit or push
+AGENT.md
+agent.md
+AGENTS.md
+agents.md
+CLAUDE.md
+claude.md
+
+# Raw local asset folder (assets are copied into public/images)
+/ASSET PEMPEK IBU MIKE/
+ASSET PEMPEK IBU MIKE/
+
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js build output
+/.next/
+/out/
+
+# Production
+/build
+dist/
+
+# Misc
+.DS_Store
+*.pem
+Thumbs.db
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local environment files
+.env*.local
+.env
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
