@@ -20,7 +20,7 @@ export function Parallax({ children, distance = 40, className = "" }: ParallaxPr
 
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`}>
-      <m.div style={{ y }} className="w-full h-full">
+      <m.div style={{ y }} className="relative w-full h-full">
         {children}
       </m.div>
     </div>
