@@ -41,6 +41,14 @@ export const metadata: Metadata = {
     locale: "id_ID",
     type: "website",
   },
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -52,7 +60,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "FoodEstablishment",
     name: "Pempek Ibu Mike",
-    image: "/images/logo%20pempek.png",
+    image: "/images/logo%20pempek.webp",
     description:
       "Pempek autentik Palembang berbahan baku ikan tenggiri asli pilihan di Bogor sejak 2017.",
     address: {

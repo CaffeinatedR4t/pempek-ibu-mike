@@ -11,6 +11,19 @@ export function StorySection() {
       id="tentang-kami"
       className="relative py-[var(--section-y)] overflow-hidden"
     >
+      {/* Decorative Pempek Supergraphic 1 (Continuous Palembang motif backdrop) */}
+      <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden">
+        <div className="relative w-full h-full opacity-25 mix-blend-screen filter contrast-150 brightness-125">
+          <Image
+            src={ASSETS.supergraphics.pattern}
+            alt=""
+            fill
+            className="object-cover object-center scale-105"
+          />
+        </div>
+        <div className="absolute inset-0 bg-radial-[at_50%_50%] from-transparent via-[var(--bg-top)]/60 to-[var(--bg-top)] pointer-events-none" />
+      </div>
+
       <div className="container-fluid relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[var(--space-l)] items-center">
           {/* Left Column: Brand Story Image with "Berdiri Sejak 2017" badge */}

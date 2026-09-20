@@ -8,7 +8,7 @@ import { Parallax } from "@/components/motion/Parallax";
 export function ClosingCtaSection() {
   return (
     <section
-      id="kontak"
+      id="pesan"
       className="relative py-[calc(var(--section-y)*1.2)] overflow-hidden flex items-center justify-center min-h-[550px]"
     >
       {/* Full-bleed food photo background with subtle parallax drift */}

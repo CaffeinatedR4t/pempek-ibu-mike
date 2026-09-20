@@ -4,16 +4,26 @@ import { ASSETS } from "@/lib/assets";
 interface ScallopedDividerProps {
   className?: string;
   flip?: boolean;
+  scale?: "standard" | "large";
 }
 
-export function ScallopedDivider({ className = "", flip = false }: ScallopedDividerProps) {
+export function ScallopedDivider({
+  className = "",
+  flip = false,
+  scale = "standard",
+}: ScallopedDividerProps) {
+  const heightClass =
+    scale === "large"
+      ? "h-20 sm:h-28 md:h-36 lg:h-44"
+      : "h-14 sm:h-20 md:h-24 lg:h-28";
+
   return (
     <div
       aria-hidden="true"
-      className={`w-full overflow-hidden pointer-events-none select-none z-20 ${className}`}
+      className={`w-full overflow-hidden pointer-events-none select-none relative z-20 flex justify-center items-center ${className}`}
     >
       <div
-        className={`relative w-[110%] -left-[5%] h-12 md:h-18 lg:h-24 ${
+        className={`relative w-[135vw] min-w-[1600px] max-w-[2800px] flex-shrink-0 ${heightClass} ${
           flip ? "rotate-180" : ""
         }`}
       >
@@ -22,7 +32,7 @@ export function ScallopedDivider({ className = "", flip = false }: ScallopedDivi
           alt=""
           fill
           priority
-          className="object-cover object-center filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] opacity-90"
+          className="object-cover object-center filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)] opacity-95"
         />
       </div>
     </div>

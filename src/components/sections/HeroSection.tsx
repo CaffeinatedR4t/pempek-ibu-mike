@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/Button";
 export function HeroSection() {
   const lenis = useLenis();
 
-  const handleScrollToMenu = (e: React.MouseEvent) => {
+  const handleScrollToMenu = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     if (lenis) {
       const headerHeight = document.querySelector("header")?.offsetHeight ?? 80;
@@ -24,14 +24,14 @@ export function HeroSection() {
   return (
     <section
       id="beranda"
-      className="relative min-h-[92vh] md:min-h-screen flex items-center pt-[var(--nav-h)] pb-[var(--space-xl)] overflow-hidden"
+      className="relative min-h-[92vh] md:min-h-screen flex items-center pt-[var(--nav-h)] pb-[var(--space-2xl)] overflow-hidden"
     >
-      {/* Background food photo with slow scale entrance and multiply overlay */}
+      {/* Background food photo with multiply overlay - layered at z-0 */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <m.div
-          initial={{ scale: 1.06, opacity: 0.7 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ scale: 1.04 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="relative w-full h-full"
         >
           <Image
@@ -44,57 +44,37 @@ export function HeroSection() {
           />
         </m.div>
 
-        {/* Dark multiply & directional gradient overlays for crisp text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/30 md:via-black/70 md:to-transparent mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-top)] via-transparent to-[var(--bg-top)] opacity-80" />
-        <div className="absolute inset-0 bg-radial-[at_20%_40%] from-transparent via-black/40 to-black/90" />
+        {/* Dark directional & multiply overlays matching Figma #1:75 & #1:76 */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/40 md:via-black/75 md:to-transparent mix-blend-multiply z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-top)] via-transparent to-[var(--bg-top)] opacity-90 z-[2]" />
       </div>
 
-      {/* Hero Content */}
+      {/* Hero Content - Layered at z-10 for guaranteed first-paint visibility */}
       <div className="container-fluid relative z-10 py-[var(--space-m)]">
         <div className="max-w-[850px] flex flex-col items-start text-left">
           {/* Eyebrow */}
-          <m.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="inline-block font-serif italic text-[#FDB03F] text-[length:var(--text-eyebrow)] mb-[var(--space-xs)] drop-shadow-sm">
+          <div className="mb-[var(--space-xs)]">
+            <span className="inline-block font-serif italic text-[#FDB03F] text-[length:var(--text-eyebrow)] drop-shadow-sm">
               {SITE_DATA.hero.eyebrow}
             </span>
-          </m.div>
+          </div>
 
           {/* Main Headline */}
-          <m.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif italic text-[length:var(--text-hero)] leading-[1.05] tracking-tight text-gradient-cream shadow-title"
-          >
+          <h1 className="font-serif italic text-[length:var(--text-hero)] leading-[1.05] tracking-tight text-gradient-cream shadow-title">
             {SITE_DATA.hero.headlinePart1}
             <span className="text-gradient-gold not-italic font-serif italic">
               {SITE_DATA.hero.headlineAccent}
             </span>
             {SITE_DATA.hero.headlinePart2}
-          </m.h1>
+          </h1>
 
           {/* Subtitle / Paragraph */}
-          <m.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="font-sans text-[length:var(--text-body)] text-[#E7DFCC] leading-relaxed max-w-[58ch] mt-[var(--space-m)] mb-[var(--space-l)] opacity-90"
-          >
+          <p className="font-sans text-[length:var(--text-body)] text-[#E7DFCC] leading-relaxed max-w-[58ch] mt-[var(--space-m)] mb-[var(--space-l)] opacity-95 text-pretty">
             {SITE_DATA.hero.description}
-          </m.p>
+          </p>
 
           {/* Action Buttons */}
-          <m.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.48, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap items-center gap-[var(--space-s)] w-full sm:w-auto"
-          >
+          <div className="flex flex-wrap items-center gap-[var(--space-s)] w-full sm:w-auto">
             <Button
               href="#menu"
               variant="cream"
@@ -111,20 +91,15 @@ export function HeroSection() {
             >
               {SITE_DATA.hero.ctaOrder}
             </Button>
-          </m.div>
+          </div>
 
           {/* Hero In-place WhatsApp Mulai Chat Pill */}
-          <m.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-[var(--space-m)]"
-          >
+          <div className="mt-[var(--space-m)]">
             <Link
               href={SITE_DATA.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-4 py-2 bg-[#E8E0CE] hover:bg-[#F3EDC8] text-[#410704] rounded-full shadow-lg transition-all group"
+              className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-[#E8E0CE] hover:bg-[#F3EDC8] text-[#410704] rounded-full shadow-lg transition-all group"
             >
               <div className="relative w-5 h-5 flex-shrink-0">
                 <Image
@@ -139,7 +114,7 @@ export function HeroSection() {
                 {SITE_DATA.hero.ctaWhatsApp}
               </span>
             </Link>
-          </m.div>
+          </div>
         </div>
       </div>
     </section>
