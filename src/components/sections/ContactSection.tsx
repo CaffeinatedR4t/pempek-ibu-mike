@@ -29,7 +29,7 @@ export function ContactSection() {
           <Reveal delay={0.1}>
             <div className="relative rounded-[var(--radius-btn)] p-7 md:p-8 bg-[rgba(99,10,3,0.78)] border border-[rgba(253,176,63,0.3)] shadow-2xl overflow-hidden flex flex-col justify-between min-h-[340px] group hover:border-[rgba(253,176,63,0.6)] transition-all">
               {/* Background Vector 1 (Figma #1:55) with z-0 */}
-              <div className="absolute right-2 bottom-3 w-28 h-48 pointer-events-none select-none z-0 opacity-25 group-hover:opacity-40 transition-opacity">
+              <div className="absolute right-2 bottom-2 w-36 h-52 pointer-events-none select-none z-0 opacity-55 group-hover:opacity-75 transition-opacity">
                 <Image
                   src={ASSETS.vectors.halal}
                   alt=""
@@ -63,7 +63,7 @@ export function ContactSection() {
           <Reveal delay={0.2}>
             <div className="relative rounded-[var(--radius-btn)] p-7 md:p-8 bg-[rgba(99,10,3,0.78)] border border-[rgba(253,176,63,0.3)] shadow-2xl overflow-hidden flex flex-col justify-between min-h-[340px] group hover:border-[rgba(253,176,63,0.6)] transition-all">
               {/* Background Vector 2 (Figma #1:58) with z-0 */}
-              <div className="absolute right-2 bottom-4 w-36 h-32 pointer-events-none select-none z-0 opacity-25 group-hover:opacity-40 transition-opacity">
+              <div className="absolute right-2 bottom-3 w-40 h-36 pointer-events-none select-none z-0 opacity-55 group-hover:opacity-75 transition-opacity">
                 <Image
                   src={ASSETS.vectors.pirt}
                   alt=""
@@ -97,7 +97,7 @@ export function ContactSection() {
           <Reveal delay={0.3}>
             <div className="relative rounded-[var(--radius-btn)] p-7 md:p-8 bg-[rgba(99,10,3,0.78)] border border-[rgba(253,176,63,0.3)] shadow-2xl overflow-hidden flex flex-col justify-between min-h-[340px] group hover:border-[rgba(253,176,63,0.6)] transition-all">
               {/* Background Vector 3 (Figma #1:60) with z-0 */}
-              <div className="absolute right-3 bottom-4 w-28 h-28 pointer-events-none select-none z-0 opacity-25 group-hover:opacity-40 transition-opacity">
+              <div className="absolute right-3 bottom-3 w-32 h-32 pointer-events-none select-none z-0 opacity-55 group-hover:opacity-75 transition-opacity">
                 <Image
                   src={ASSETS.vectors.nib}
                   alt=""

@@ -20,7 +20,7 @@ export function MenuSection() {
     >
       {/* Decorative Pempek Supergraphic 1 (Visible traditional songket/pempek pattern) */}
       <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden">
-        <div className="relative w-full h-full opacity-35 mix-blend-screen filter contrast-150 brightness-125">
+        <div className="relative w-full h-full opacity-35">
           <Image
             src={ASSETS.supergraphics.pattern}
             alt=""
@@ -28,7 +28,6 @@ export function MenuSection() {
             className="object-cover object-center"
           />
         </div>
-        <div className="absolute inset-0 bg-radial-[at_50%_50%] from-transparent via-[var(--bg-top)]/50 to-[var(--bg-top)] pointer-events-none" />
       </div>
 
       <div className="container-fluid relative z-10">

@@ -13,7 +13,7 @@ export function StorySection() {
     >
       {/* Decorative Pempek Supergraphic 1 (Continuous Palembang motif backdrop) */}
       <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden">
-        <div className="relative w-full h-full opacity-25 mix-blend-screen filter contrast-150 brightness-125">
+        <div className="relative w-full h-full opacity-30">
           <Image
             src={ASSETS.supergraphics.pattern}
             alt=""
@@ -21,7 +21,6 @@ export function StorySection() {
             className="object-cover object-center scale-105"
           />
         </div>
-        <div className="absolute inset-0 bg-radial-[at_50%_50%] from-transparent via-[var(--bg-top)]/60 to-[var(--bg-top)] pointer-events-none" />
       </div>
 
       <div className="container-fluid relative z-10">

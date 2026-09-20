@@ -2,7 +2,6 @@
 
 import { m } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useLenis } from "lenis/react";
 import { ASSETS } from "@/lib/assets";
 import { SITE_DATA } from "@/content/siteData";
@@ -49,8 +48,8 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-top)] via-transparent to-[var(--bg-top)] opacity-90 z-[2]" />
       </div>
 
-      {/* Hero Content - Layered at z-10 for guaranteed first-paint visibility */}
-      <div className="container-fluid relative z-10 py-[var(--space-m)]">
+      {/* Hero Content - Layered at z-20 for guaranteed visibility above background & overlays */}
+      <div className="container-fluid relative z-20 py-[var(--space-m)]">
         <div className="max-w-[850px] flex flex-col items-start text-left">
           {/* Eyebrow */}
           <div className="mb-[var(--space-xs)]">
@@ -74,7 +73,7 @@ export function HeroSection() {
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center gap-[var(--space-s)] w-full sm:w-auto">
+          <div className="flex flex-wrap items-center gap-[var(--space-s)] w-full sm:w-auto mt-[var(--space-xs)]">
             <Button
               href="#menu"
               variant="cream"
@@ -92,29 +91,19 @@ export function HeroSection() {
               {SITE_DATA.hero.ctaOrder}
             </Button>
           </div>
+        </div>
+      </div>
 
-          {/* Hero In-place WhatsApp Mulai Chat Pill */}
-          <div className="mt-[var(--space-m)]">
-            <Link
-              href={SITE_DATA.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-[#E8E0CE] hover:bg-[#F3EDC8] text-[#410704] rounded-full shadow-lg transition-all group"
-            >
-              <div className="relative w-5 h-5 flex-shrink-0">
-                <Image
-                  src={ASSETS.vectors.whatsappSvg}
-                  alt="WhatsApp"
-                  width={20}
-                  height={20}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <span className="text-sm font-semibold underline underline-offset-4 decoration-[#410704]/50 group-hover:decoration-[#410704]">
-                {SITE_DATA.hero.ctaWhatsApp}
-              </span>
-            </Link>
-          </div>
+      {/* Decorative Wave Transition (SUPERGRAPHIC 2 - Figma #1:120) seamlessly overlaying bottom of hero */}
+      <div className="absolute bottom-0 inset-x-0 w-full overflow-hidden pointer-events-none select-none z-10 flex justify-center">
+        <div className="relative w-[130vw] min-w-[1500px] max-w-[2600px] h-28 sm:h-36 md:h-48 lg:h-56 translate-y-1">
+          <Image
+            src={ASSETS.supergraphics.scallop}
+            alt=""
+            fill
+            priority
+            className="object-cover object-bottom opacity-85"
+          />
         </div>
       </div>
     </section>

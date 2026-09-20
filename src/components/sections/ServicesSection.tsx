@@ -14,7 +14,7 @@ export function ServicesSection() {
     >
       {/* Decorative Pempek Supergraphic 1 (Visible traditional songket/pempek pattern) */}
       <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden">
-        <div className="relative w-full h-full opacity-30 mix-blend-screen filter contrast-150 brightness-125">
+        <div className="relative w-full h-full opacity-30">
           <Image
             src={ASSETS.supergraphics.pattern}
             alt=""
@@ -22,7 +22,6 @@ export function ServicesSection() {
             className="object-cover object-bottom"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-top)] via-transparent to-[var(--bg-bottom)] opacity-70" />
       </div>
 
       <div className="container-fluid relative z-10">
