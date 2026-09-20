@@ -18,9 +18,9 @@ export function MenuSection() {
       id="menu"
       className="relative py-[var(--section-y)] overflow-hidden"
     >
-      {/* Decorative Pempek Supergraphic at 10% opacity */}
+      {/* Decorative Pempek Supergraphic 1 (Visible traditional songket/pempek pattern) */}
       <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden">
-        <div className="relative w-full h-full opacity-10">
+        <div className="relative w-full h-full opacity-35 mix-blend-screen filter contrast-150 brightness-125">
           <Image
             src={ASSETS.supergraphics.pattern}
             alt=""
@@ -28,6 +28,7 @@ export function MenuSection() {
             className="object-cover object-center"
           />
         </div>
+        <div className="absolute inset-0 bg-radial-[at_50%_50%] from-transparent via-[var(--bg-top)]/50 to-[var(--bg-top)] pointer-events-none" />
       </div>
 
       <div className="container-fluid relative z-10">

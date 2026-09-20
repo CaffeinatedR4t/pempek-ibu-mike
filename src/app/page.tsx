@@ -8,12 +8,15 @@ import { TestimonialSection } from "@/components/sections/TestimonialSection";
 import { ClosingCtaSection } from "@/components/sections/ClosingCtaSection";
 import { Footer } from "@/components/sections/Footer";
 
+import { ScallopedDivider } from "@/components/ui/ScallopedDivider";
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
+        <ScallopedDivider className="-mt-6 md:-mt-10 mb-0 relative z-20" />
         <MenuSection />
         <StorySection />
         <ServicesSection />

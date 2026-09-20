@@ -1,37 +1,37 @@
 export const ASSETS = {
   logo: {
-    png: "/images/logo%20pempek.png",
+    webp: "/images/logo%20pempek.webp",
     svg: "/images/logo%20pempek.svg",
   },
   hero: {
-    bg: "/images/GAMBAR%20BACKGROUND%20HOME.png",
-    foodPhoto: "/images/GAMBAR%201.png",
-    shadow: "/images/GAMBAR%202%20(SHADOW).png",
+    bg: "/images/GAMBAR%20BACKGROUND%20HOME.webp",
+    foodPhoto: "/images/GAMBAR%201.webp",
+    shadow: "/images/GAMBAR%202%20(SHADOW).webp",
   },
   menu: {
-    lenjer: "/images/GAMBAR%203.png",
-    keriting: "/images/GAMBAR%204.png",
-    adaan: "/images/GAMBAR%205.png",
-    kapalSelam: "/images/GAMBAR%206.png",
-    flyer: "/images/MENU.png",
+    lenjer: "/images/GAMBAR%203.webp",
+    keriting: "/images/GAMBAR%204.webp",
+    adaan: "/images/GAMBAR%205.webp",
+    kapalSelam: "/images/GAMBAR%206.webp",
+    flyer: "/images/MENU.webp",
   },
   story: {
-    main: "/images/GAMBAR%207.png",
+    main: "/images/GAMBAR%207.webp",
   },
   services: {
-    siapSaji: "/images/GAMBAR%208.png",
-    perayaan: "/images/GAMBAR%209.png",
-    formalCatering: "/images/GAMBAR%2010.png",
-    paketKeluarga: "/images/GAMBAR%2011.png",
+    siapSaji: "/images/GAMBAR%208.webp",
+    perayaan: "/images/GAMBAR%209.webp",
+    formalCatering: "/images/GAMBAR%2010.webp",
+    paketKeluarga: "/images/GAMBAR%2011.webp",
   },
   founder: {
-    photo: "/images/GAMBAR%2012.png",
+    photo: "/images/GAMBAR%2012.webp",
   },
   closing: {
-    bg: "/images/GAMBAR%2013.png",
+    bg: "/images/GAMBAR%2013.webp",
   },
   supergraphics: {
-    pattern: "/images/SUPERGRAPHIC%201.png",
+    pattern: "/images/SUPERGRAPHIC%201.webp",
     scallop: "/images/SUPERGRAPHIC%202.svg",
   },
   vectors: {
@@ -39,7 +39,7 @@ export const ASSETS = {
     pirt: "/images/VECTOR%202.svg",
     nib: "/images/VECTOR%203.svg",
     whatsappSvg: "/images/VECTOR%20WHATSAPP.svg",
-    whatsappPng: "/images/VECTOR%20WHATSAPP%20IMAGE.png",
+    whatsappWebp: "/images/VECTOR%20WHATSAPP%20IMAGE.webp",
   },
   buttons: {
     darkRed: "/images/ICON%20BUTTON%20DARK%20RED.svg",

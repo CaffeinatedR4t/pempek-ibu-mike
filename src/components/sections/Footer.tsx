@@ -23,15 +23,15 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative bg-gradient-to-r from-[#2F0D0B] to-[#580A0A] text-[#F7E2B5] pt-12 pb-10 overflow-hidden border-t border-[rgba(253,176,63,0.15)]">
-      {/* Decorative Scalloped / Wave Top Edge SVG */}
-      <div className="absolute top-0 inset-x-0 -translate-y-[98%] pointer-events-none select-none opacity-40">
-        <div className="relative w-full h-8 md:h-12">
+    <footer className="relative bg-gradient-to-r from-[#2F0D0B] to-[#580A0A] text-[#F7E2B5] pt-14 pb-10 overflow-hidden">
+      {/* Decorative Scalloped / Wave Top Edge SVG (SUPERGRAPHIC 2) */}
+      <div className="absolute top-0 inset-x-0 -translate-y-[90%] pointer-events-none select-none z-20">
+        <div className="relative w-[110%] -left-[5%] h-12 md:h-16 lg:h-20">
           <Image
             src={ASSETS.supergraphics.scallop}
             alt=""
             fill
-            className="object-cover object-bottom"
+            className="object-cover object-bottom filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] opacity-95"
           />
         </div>
       </div>
